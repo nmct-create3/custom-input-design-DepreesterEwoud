@@ -645,7 +645,10 @@ input::placeholder {
 }
 
 .c-option-list{
-    
+    margin-bottom: 24px;
+}
+.c-option-list__item{
+    margin-bottom: 12px;
 }
 .c-option--hidden:checked + .c-custom-option {
     /*
@@ -675,6 +678,8 @@ input::placeholder {
     
   }
 .c-custom-option{
+    --custom-option-borderColor: var(--global-input-borderColor);
+    --custom-option-focus-borderColor: var(--global-input-focus-borderColor);
     display: flex;
 }
 
@@ -682,10 +687,14 @@ input::placeholder {
     display: flex;
     width: 16px;
     height: 16px;
-    border: 1px solid var(--global-color-neutral-xxx-light);
+    border: 1px solid var(--custom-option-borderColor);
     margin-right: 8px;
     
 }
+
+.c-custom-option:hover {
+    --custom-option-borderColor: var(--global-color-alpha);
+  }
 
 .c-custom-option__fake-input--checkbox{
     border-radius: var(--global-borderRadius);
@@ -711,6 +720,7 @@ input::placeholder {
     color: var(--global-color-alpha);
   }
   
+  
   .c-custom-option__fake-input--radio .c-custom-option__symbol {
     width: 6px;
     height: 6px;
@@ -719,6 +729,13 @@ input::placeholder {
     
   }
   
+  .c-custom-toggle__fake-input{
+      display: block;
+      width: 48px;
+      height: 24px;
+      border: 1px solid #E2E3E7;
+      border-radius: 45%;
+  }
 /*
     Component: Label
     ---
